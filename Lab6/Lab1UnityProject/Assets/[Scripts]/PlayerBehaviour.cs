@@ -28,6 +28,10 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        if (Application.platform != RuntimePlatform.Android)
+        {
+            onScreenControls.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -54,6 +58,11 @@ public class PlayerBehaviour : MonoBehaviour
         // apply gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            miniMap.SetActive(!miniMap.activeInHierarchy);
+        }
     }
 
     void OnDrawGizmos()
