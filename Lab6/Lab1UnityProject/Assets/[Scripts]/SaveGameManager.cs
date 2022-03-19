@@ -20,6 +20,19 @@ class SaveData
 public class SaveGameManager : MonoBehaviour
 {
     public Transform player;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SaveGame();
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadGame();
+        }
+    }
     void SaveGame()
     {
         //PlayerPrefs.SetFloat("PlayerPositionX", player.position.x);
