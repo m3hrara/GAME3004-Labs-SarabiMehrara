@@ -22,7 +22,7 @@ public class LiftOffAnimator : MonoBehaviour
     {
         if (Vector3.Distance(player.position, transform.position) < 2.1f)
         {
-            // turn to face the player
+            // face player
             Vector3 targetPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
             transform.LookAt(targetPosition);
 

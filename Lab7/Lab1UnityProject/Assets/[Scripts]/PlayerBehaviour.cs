@@ -76,6 +76,10 @@ public class PlayerBehaviour : MonoBehaviour
         {
             uiController.TakeDamage(5);
         }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            uiController.TakeDamage(5);
+        }
     }
 
     public void OnJumpButtonPressed()
